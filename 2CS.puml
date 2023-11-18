@@ -1,0 +1,22 @@
+@startuml
+class Server.ContactDAO {
+- Connection con
+- {static} String URL
+- {static} String USER
+- {static} String PASSWORD
++ void finalize()
++ ResultSet select_name(String)
++ ResultSet select_phone(String)
++ Boolean insert(String,String,String,String)
++ void update_name(int,String)
++ void update_phone(int,String)
++ void update_email(int,String)
++ void update_address(int,String)
++ Boolean delete(int)
+}
+class Client.Main {
++ {static} void main(String[])
+}
+
+Server.ContactDAO <..left.. Client.Main
+@enduml
